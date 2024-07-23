@@ -2,10 +2,14 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
-from config import GOOGLE_API_KEY
+# from config import GOOGLE_API_KEY
+
 
 # Configure Google Generative AI with your API key
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
+
+# # Configure Google Generative AI with your API key
+# genai.configure(api_key=GOOGLE_API_KEY)
 
 def upload_to_gemini(file, mime_type=None):
     """Uploads the given file to Gemini."""
