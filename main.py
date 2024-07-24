@@ -87,7 +87,7 @@ def chat_with_ai(user_message):
     # Send message to AI and get response
     response = st.session_state.chat_session.send_message(message_content)
 
-    print(response)
+    # print(response)
 
     # Add AI response to history
     st.session_state.history.append({"role": "assistant", "content": response.parts[0].text})
@@ -98,8 +98,12 @@ user_input = st.text_input("Enter your message to the AI:")
 
 if st.button("Send"):
     if user_input:
-        print(user_input)
+        # print(user_input)
         chat_with_ai(user_input)
+        
+if st.button("Clear Chat"):
+    st.session_state.history = []
+    st.session_state.chat_session = None        
 
 # Display chat history
 for message in st.session_state.history:
