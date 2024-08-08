@@ -58,7 +58,7 @@ if uploaded_file is not None:
                 "role": "user",
                 "parts": [
                     gemini_file,
-                    "You are an intelligent system. I am going to provide an Entity relationship diagram. You need to read that diagram and develop a BigQuery script using that. Use temp tables to store the joined table results. In one temp table do not have more than 3 tables joined. Create a separate table to store more than 3 tables join. Subsequently use the temp tables created and form the logic.",
+                    "You are an intelligent system. I am going to provide an Entity relationship diagram. You need to read that diagram and develop a BigQuery script using that. Use temp tables to store the joined table results. In one temp table do not have more than 3 tables joined. Create a separate table to store more than 3 tables join. Subsequently use the temp tables created and form the logic. and make sure to exclude ''' in the beginning and end.",
                 ],
             }
         ]
